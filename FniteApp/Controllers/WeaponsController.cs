@@ -149,5 +149,25 @@ namespace FniteApp.Controllers
         {
             return _context.Weapon.Any(e => e.Id == id);
         }
+
+        public System.Collections.Generic.IList<Weapon> GetEvents()
+        {
+
+            var events = from s in _context.Weapon
+                         select s;
+
+            return events.ToList();
+        }
+
+        public IActionResult Stat()
+        {
+            IList<Weapon> weaponList = GetEvents();
+            var bestr = from b in weaponList
+                        orderby b.DPS descending
+                        select b;
+            var best = bestr;
+            return View(best);
+            //return View();
+        }
     }
 }

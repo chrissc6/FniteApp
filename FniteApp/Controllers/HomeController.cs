@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using FniteApp.Models;
+using Microsoft.EntityFrameworkCore;
+using FniteApp.Data;
 
 namespace FniteApp.Controllers
 {
@@ -24,11 +26,6 @@ namespace FniteApp.Controllers
         }
 
         public IActionResult Privacy()
-        {
-            return View();
-        }
-
-        public IActionResult Stat()
         {
             return View();
         }
