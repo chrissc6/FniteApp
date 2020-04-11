@@ -1,0 +1,103 @@
+﻿@model FniteApp.Models.Weapon
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Weapon</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="WeaponType" class="control-label"></label>
+                <input asp-for="WeaponType" class="form-control" />
+                <span asp-validation-for="WeaponType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Type" class="control-label"></label>
+                <input asp-for="Type" class="form-control" />
+                <span asp-validation-for="Type" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RarityType" class="control-label"></label>
+                <input asp-for="RarityType" class="form-control" />
+                <span asp-validation-for="RarityType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Rating" class="control-label"></label>
+                <input asp-for="Rating" class="form-control" />
+                <span asp-validation-for="Rating" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DPS" class="control-label"></label>
+                <input asp-for="DPS" class="form-control" />
+                <span asp-validation-for="DPS" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DamageB" class="control-label"></label>
+                <input asp-for="DamageB" class="form-control" />
+                <span asp-validation-for="DamageB" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DamageH" class="control-label"></label>
+                <input asp-for="DamageH" class="form-control" />
+                <span asp-validation-for="DamageH" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FireRate" class="control-label"></label>
+                <input asp-for="FireRate" class="form-control" />
+                <span asp-validation-for="FireRate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MagazineSize" class="control-label"></label>
+                <input asp-for="MagazineSize" class="form-control" />
+                <span asp-validation-for="MagazineSize" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ReloadTime" class="control-label"></label>
+                <input asp-for="ReloadTime" class="form-control" />
+                <span asp-validation-for="ReloadTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StructureDamage" class="control-label"></label>
+                <input asp-for="StructureDamage" class="form-control" />
+                <span asp-validation-for="StructureDamage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BulletType" class="control-label"></label>
+                <input asp-for="BulletType" class="form-control" />
+                <span asp-validation-for="BulletType" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="BRStatus" /> @Html.DisplayNameFor(model => model.BRStatus)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="VaultedStatus" /> @Html.DisplayNameFor(model => model.VaultedStatus)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
